@@ -39,6 +39,10 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def balance
+    puts 'testing'
+  end
+
   # DELETE /articles/1
   def destroy
     @article.destroy
