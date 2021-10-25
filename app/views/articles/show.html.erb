@@ -1,14 +1,24 @@
-<p id="notice"><%= notice %></p>
-
+<p id="notice"><%= notice %></p>  
 <p>
   <strong>Title:</strong>
   <%= @article.title %>
 </p>
 
+  <%#= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
+
+<% if @article.photos.attached? %>
+  <% @article.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+<% else %>
+    You should add a picture to this article!
+<% end %>
+
 <p>
   <strong>Body:</strong>
   <%= @article.body %>
 </p>
+
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', root_path %>
