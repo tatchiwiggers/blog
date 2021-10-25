@@ -1,46 +1,69 @@
 # intro
-hosting is where we put our web app online
-image upload allows the user of your app to upload images
+hospedagem é onde colocamos nosso aplicativo web online
+o upload de imagens permite que o usuário do seu aplicativo faça upload de imagens
 
 # ENVIRONMENT
-lets talk about envs
+vamos falar de environments
 
 # DEVELOPMENT
-So far we have been working in development mode
-We have our local DB, our local server running, and in the browser we have our localhost
+Até agora temos trabalhado em modo de desenvolvimento
+Temos nosso banco de dados local, nosso servidor local em execução,
+e no navegador temos nosso localhost
 
 # PRODUCTION
-but at some point we want to have a URL we people can actually go and visit our web app
-this is where the production env comes in
+Até agora temos trabalhado em modo de desenvolvimento
+Temos nosso banco de dados local, nosso servidor local em
+execução e, no navegador, temos nosso host local
 
 # PRODUCTION 2
-so we will have our DB and our rails server somewhere online -> and for this we will need a 
-service 
+então teremos nosso banco de dados e nosso servidor de trilhos em algum lugar
+online -> e para isso precisaremos de um serviço
 
 # PRODUCTION 3
-and the service we are going to use is HEROKU - heroku will wrap around the DB and the server
-host our web app online so other ppl can visit our app
+e o serviço que vamos usar é HEROKU -
+heroku envolverá nosso banco de dados e nosso servidor
+e vai hospedar nosso aplicativo web online para que
+outras pessoas possam visitar nosso aplicativo
 
 # NO MORE SQLITE. SAY HELLO TO
-SO no more sqlite, it doenst work well with heroku and it is not a very
-robust DB. it consists of one file and it suited us well when we were working
-with small tasks back when we were learning AR. Now we are grown ups!! so we will
-be using POSTGRESQL - a robust much more advanced AND open source database
+ENTÃO chega de sqlite, ele não funciona bem com heroku e não é nada robusto. 
+Ele consiste em um arquivo somente e nos serviu bem quando estávamos trabalhando
+com pequenas tarefas quando estávamos aprendendo Active Record. 
+Agora somos adultos !! Então a partir de hoje usar o POSTGRESQL 
+- um banco de dados robusto, muito mais avançado além de todas
+as vantagens que ele nos traz ele também é open source.
+
+# INSTALL ON OS X
+O postgresql já deve estar isntalado na maquina de vocês
+desde a configuração do primeiro dia. Para verificar, vocês
+podem rodar no terminal... caso não esteja sigam os passos 
+da instalação no slide, se tiverem algum problema, so abrir um ticket.
+
+# NEW RAILS APPLICATION
+vou fazer todo o processo de rails new com vocês hoje principalmente
+porque inclui o set up de JS no frontend.
+
+hoje vocês vão continuar o watch list the ontem, mas nao sei se vocês
+se lembram vcs usaram esse tag pra gerar o rails new de vcs com postgresql
 
 # Look at your Gemfile -read
+pg postgres gem vai estar la
 
 # QUICK WAGON SETUP - read
+do all of the set up together
 
 # SCAFFOLD A POST MODEL
 explain why we need to comment out jbuilder
 ***Then generate a scaffold of Article.***
 CHANGE EVERYTHING TO ROOT
 root to: 'articles#index'
+change form, show and the redirect in the destroy controller
 
 # HEROKU
 
 # PRODUCTION
-as i said before, heroku Will handle our rails server and our DB in the cloud
+como eu disse antes, o heroku vai lidar com nosso servidor 
+Rails e nosso banco de dados na nuvem
 
 # SIGN UP
 if you havent already, sign up
@@ -48,41 +71,48 @@ if you havent already, sign up
 # HELP - read
 
 # LOGIN
-you can login from the terminal or you can simply run heroku login and it will open the browser
-for you to link you account
+você pode fazer o login a partir do terminal ou simplesmente executar o heroku
+para fazer o login atraves do browser e ele abrirá o navegador para você vincular sua conta
 
 # CREATE AN HEROKU APP - read
-for a free plan the only region u can choose is eu
+para fazer um um plano gratuito, a única região que você pode escolher é eu
 
 # WHAT HAPPENED?
 explain git remote -v
 
-GIT - HEROKU - ORIGIN  - HEROKU
-so we have a new remote: locally on our laptop we have our repo where we will
-have a local DB and a local server. so we are gonna have repos on heroku and github
-the good thing is that heroku also uses git - so what we are gonna do is just
-change the command from origin to master.
+GIT - HEROKU - ORIGEM - HEROKU
+então temos um novo remote: localmente em nosso laptop, temos nosso repositório onde temos
+um banco de dados local e um servidor local. Então a partir de aogra, 
+teremos repositórios no heroku e no github - a coisa boa é que o heroku é integrado, ele usa git -
+então o que vamos fazer é apenas mudar so comandos do nosso origin git para o heroku.
 
 # LET'S DEPLOY - read
+sempre que vcs forem deployar, vamos usar e abuasr desse comando que vai nos
+deixar a par de tudo que está acontecendo com nosso processo:
+heroku logs --tail
 
-# DONE!
+# DONE! - LETS DEPLOY ANTES DE MIGRATE!!
 Explain the syntax
 EXPLAIN ABOUT HEROKU RUN RAILS DB MIGRATE
 
 # IMAGE UPLOAD
-at some point you wanna have user side updaload on your app - just like airbnb
-for example where the user, the host uploads photos of their apartments.. and
-so on... whenever we push to heroku it wipes everything clean... so
-if you save these photos inside you assets folder it'll wipe everything
-clean eveythime you push to heroku - and that happens bc herokus dynos are ephemeral,
-that is temporary... O que são DYNOS? All Heroku applications run in a collection 
-of lightweight Linux containers that are called dynos, and these dynos are temp. 
-But if you wanna know more, basta ler esse artigo sobre heroku dynos.
-after class ok? AND - besides if you have thousands of users
-you have thousands of pics inside of assets folder and your app will take
-forever to load- and we dont want that.
+em algum ponto vocês vão querer que o usuário consiga fazer upload de suas
+imagens em seu aplicativo - assim como o airbnb
+por exemplo, onde o usuário, o host carrega fotos de seus apartamentos... e
+assim por diante ... mas uma vez pushed to herokudo seu localhost, 
+essas imagens deixarão de existir - heroku ele limpa tudo ... então
+se você salvar essas fotos dentro de sua pasta no seu localhost, ele apagará tudo
+- e isso acontece porque os dYnos do herokus são efêmeros, ou seja, eles são temporários... 
 
 # UPLOADING / STORING TO HEROKU? - read
+***dynos***
+O que são DYNOS? Todos os aplicativos Heroku são executados em uma coleção
+de contêineres Linux leves que são chamados de dynos, e esses dynos são temporários.
+Mas se quiserem saber mais,deem uma olhada nesse link aqui do slide.
+***dynos***
+
+E - além disso, se você tiver milhares de usuários você tem milhares de fotos
+dentro da pasta de ativos e seu aplicativo vai tirar para carregar para sempre - e não queremos isso.
 
 # We need an external service
 
@@ -109,19 +139,27 @@ show them in localhost
 # You can upload also other file formats (PDFs, etc.)
 
 # ACTIVE STORAGE
-so we uploaded to pics manually but we want id for the user to
-use a form to upload an image by selecting it from their HD
-and for this we are gonna use active storage - it used to be
-a gem but now its included in rails v 5.2 and above reason why
-we has to do skip active storage....
-so what it does is, it magicaly connects our images on CL 
-to the models we have in our application
+Até agora carregamos para duas fotos manualmente, mas o que o que queremos 
+é que um usuário use um formulário para fazer upload de uma imagem, 
+atravaes das imagens salvas em seu HD.
+e para isso vamos usar o Active Storage gem o AS - costumava ser
+uma gem, mas agora está incluída no rails v 5.2 e acima, razão pela qual
+temos que pular o AS quando fizemos rails new na primeira semana de rails....
+***ActiveStorage***
+Então o que ele faz é conectar magicamente nossas imagens no CL 
+aos modelos que temos em nosso aplicativo
 
 # SETUP
-show them that it creates 2 tables: attachments and blobs
-blobs are the files that we upload and the attachements
-are the join table between our model and those files (blobs)
-it references thos 2 tables.
+Ele cria uma migração:
+Ele cria duas tabelas no banco de dados para lidar com as associações
+entre nossas imagens carregadas no Cloudinary e qualquer modelo em nosso aplicativo.
+
+As 2 tabelas: active storega attachements
+and active storage blobs - os activestorage blobs são os arquivos que fazemos upload
+e os actiVe storage attachments é o join table entre nosso modelo e esses arquivos (blobs)
+faz referência a essas 2 tabelas.
+
+RUN RAILS RB MIGRATE
 
 # CONFIG - read
 
@@ -136,6 +174,9 @@ it references thos 2 tables.
 if you wanna use an image as background...
 
 # SEED - show them my seeds
+Quando vocês quiserem fazer seeds, vocês podem anexar um arquivo do HD ou baixado de um URL enviado pelo usuário. Para fazer isso, basta fornece essa informação contendo pelo menos um objeto IO aberto e um nome de arquivo:
+
+https://guides.rubyonrails.org/active_storage_overview.html#has-one-attached
 
 # HELPFUL ACTIVE STORAGE METHODS
 show them in the view HOW to do a conditional for photo.attached?
@@ -158,8 +199,13 @@ SHOW PAGE!!!!
 # VIEW & CONTROLLER
 
 # BEHIND THE SCENES (DB SCHEMA)
+https://guiarails.com.br/association_basics.html#associacoes-polimorficas
+
+nos temos duas tabelas extras vindas do Actice Storage - quando rodamos o installer ele gerou uma migração e apos rodar essa migração ele gerou essas tabelas, se lembram?
+Aqui nos temos uma associação polimorfica: Nas associações polimórficas, um modelo pode pertencer a mais de uma tabela, em uma única associação. Por exemplo, você pode ter um model de articles que pertença a uma tabela Active Storage attachements. Atraves do record id identificamos o modelo a que ele se refere, ou podemos ter nosso modelo User, por exemplo, tambem sendo referido aqui atravaes desse record_type. Os blobs guardam os arquivos e suas informações e como join table temos os attachements que guardam todas as relações entre nosso cloudinary e o modelo.
 
 # PRODUCTION
-make sure you add the correct CL config for production as well
+Importante lemnrar de adicionar a configuração CL correta para produção também. Para subirmos
+noss app pro Heroku.
 
 # GOING FURTHER - read
