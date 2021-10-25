@@ -75,9 +75,9 @@ for example where the user, the host uploads photos of their apartments.. and
 so on... whenever we push to heroku it wipes everything clean... so
 if you save these photos inside you assets folder it'll wipe everything
 clean eveythime you push to heroku - and that happens bc herokus dynos are ephemeral,
-that is temporary... All Heroku applications run in a collection of lightweight
-Linux containers that are called dynos, and these dynos are temp. 
-But if you wanna know more, i can send you an article on heroku dynos
+that is temporary... O que são DYNOS? All Heroku applications run in a collection 
+of lightweight Linux containers that are called dynos, and these dynos are temp. 
+But if you wanna know more, basta ler esse artigo sobre heroku dynos.
 after class ok? AND - besides if you have thousands of users
 you have thousands of pics inside of assets folder and your app will take
 forever to load- and we dont want that.
