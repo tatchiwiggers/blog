@@ -4,7 +4,13 @@
   <%= @article.title %>
 </p>
 
+
+<%# if @article.photos.attached? %>
   <%#= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
+<%# else %>
+    <%# You should add a picture to this article! %>
+<%# end %>
+
 
 <% if @article.photos.attached? %>
   <% @article.photos.each do |photo| %>
